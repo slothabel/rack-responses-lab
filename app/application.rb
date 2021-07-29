@@ -10,13 +10,15 @@ class Application
       
 
 
-      if Time.now.to_i <= 12
-        resp.write "Good morning"
-        binding.pry
+    current_time = Time.now
+    # binding.pry
+  
+      if current_time.hour >= 12
+        resp.write "Good afternoon"
         else
-            resp.write "Good afternoon"
+            resp.write "Good morning"
         end
-
+        resp.finish
     end
   
   end
